@@ -1,0 +1,16 @@
+package br.com.alura.alurator.playground.reflexao;
+
+import br.com.alura.alurator.playground.anotacao.NomeTagXml;
+import br.com.alura.alurator.playground.modelo.Produto;
+
+public class TesteManipulaAnotacao {
+
+    public static void main(String[] args) {
+        Produto produto = new Produto("Produto 1", 20.0, "Marca 1");
+        Class<?> classe = produto.getClass();
+
+        //value() está escrito assim pq na classe NomaTagXml está como value()
+        System.out.println(classe.getDeclaredAnnotation(NomeTagXml.class).value()); //getDeclaredAnnotation(NomeTagXml.class), recebe uma classe identificando qual é a anotação que quero verificar se está na classe
+    }
+}
+
